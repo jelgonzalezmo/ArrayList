@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cardinalidadilimitada;
+package Hashmap;
 
 import java.util.ArrayList;
-
+import java.util.HashMap;
 /**
  *
  * @author Estudiante
@@ -17,23 +17,31 @@ public class Cardinalidadilimitada {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-   Factura factura =new Factura();
+   Factura1 factura =new Factura1();
  
-   Producto p1=new Producto();
-   p1.setNombre("papas");
+   Producto1 p1=new Producto1();
+   p1.setNombre("papas2");
    p1.setPrecio(45.6);
            
-    Producto p2=new Producto();
+ 
+   
+   Producto1 p2=new Producto1();
    p2.setNombre("papas2");
    p2.setPrecio(45.67);
    
-  factura.adicionarProducto(p1);
-  factura.adicionarProducto(p2);
+  factura.adicionarProducto1(p1);
+  factura.adicionarProducto1(p2);
+  
    
- ArrayList<Producto>  lista=factura.listarproductos();
-   for (int i=0;i<lista.size();i++){
-   Producto p=lista.get(i);
+HashMap <String,Producto1> lista = factura.listarproductos();
+   for (String clave:lista.keySet()){
+   Producto1 p=lista.get(clave);
    System.out.println(p.getNombre()+" "+p.getPrecio());
              }
-          }
+    
+    for(Producto1 p: lista.values()){
+    System.out.println(p.getNombre()+" "+p.getPrecio() );
     }
+     
+    
+}}
